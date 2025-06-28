@@ -1,0 +1,120 @@
+/* Container centers the login box */
+.login_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: #f3f4f6;
+    padding: 20px;
+    /* Make sure it doesn’t shrink too much on small screens */
+    box-sizing: border-box;
+}
+
+/* Login card */
+.login_header {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Form styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login_title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.login_label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.login_input {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    width: 100%;  /* Important for responsiveness */
+    box-sizing: border-box;
+}
+
+.login_input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+/* Button styling */
+.login_button {
+    padding: 0.75rem;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;  /* Full width button on small screens */
+    box-sizing: border-box;
+}
+
+.login_button:hover {
+    background-color: #dc2626;
+}
+
+/* Error message styling */
+.login_error {
+    color: #dc2626;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive typography and layout tweaks */
+@media (max-width: 480px) {
+    .login_header {
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .login_title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .login_label {
+        font-size: 0.9rem;
+    }
+
+    .login_input {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .login_button {
+        padding: 0.6rem;
+        font-size: 1rem;
+        border-radius: 1.5rem;
+    }
+
+    /* Adjust the text paragraph under password input */
+    p.text- {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+}
