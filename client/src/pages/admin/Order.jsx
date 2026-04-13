@@ -15,7 +15,7 @@ const Order = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/orders', {
+        const res = await axios.get('/api/orders', {
           withCredentials: true,
         });
         // console.log(res.data);
@@ -42,7 +42,7 @@ const Order = () => {
 
     try {
       await axios.put(
-        `http://localhost:3000/api/orders/${orderId}`,
+        `/api/orders/${orderId}`,
         { status: nextStatus },
         { withCredentials: true }
       );

@@ -9,7 +9,7 @@ function Women() {
         // Fetch products from backend
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/products/'); // Assuming proxy is set
+                const response = await axios.get('/api/products/'); // Assuming proxy is set
                 setProducts(response.data);
             } catch (error) {
                 console.error('Error fetching products:', error);

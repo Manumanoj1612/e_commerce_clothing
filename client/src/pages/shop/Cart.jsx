@@ -10,7 +10,7 @@ function Cart() {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/cart', {
+        const res = await axios.get('/api/cart', {
           withCredentials: true,
         });
         const items = res.data?.products || [];
@@ -30,7 +30,7 @@ function Cart() {
   const updateQuantity = async (productId, newQty) => {
     try {
       await axios.put(
-        `http://localhost:3000/api/cart/${productId}`,
+        `/api/cart/${productId}`,
         { quantity: newQty },
         { withCredentials: true }
       );
@@ -67,7 +67,7 @@ function Cart() {
 
   const removeFromCart = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/cart/${id}`, {
+      await axios.delete(`/api/cart/${id}`, {
         withCredentials: true,
       });
       setCartItems((prev) => prev.filter((item) => item._id !== id));
@@ -79,7 +79,7 @@ function Cart() {
   const handlePlaceOrder = async () => {
     try {
       await axios.post(
-        'http://localhost:3000/api/orders',
+        '/api/orders',
         {},
         { withCredentials: true }
       );

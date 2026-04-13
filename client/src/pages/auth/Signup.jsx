@@ -19,7 +19,7 @@ function Signup() {
 
         try {
             const response = await axios.post(
-                'http://localhost:3000/api/register',
+                '/api/register',
                 { username, email, password, role },
                 { withCredentials: true } // ✅ Important
             );
@@ -28,7 +28,7 @@ function Signup() {
 
             if (response.data.success) {
                 // After signup → fetch user details from /me
-                const meResponse = await axios.get('http://localhost:3000/api/me', { withCredentials: true });
+                const meResponse = await axios.get('/api/me', { withCredentials: true });
                 console.log("Fetched user after signup:", meResponse.data);
                 setUser(meResponse.data.user);
                 navigate("/");

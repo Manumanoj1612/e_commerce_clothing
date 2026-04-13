@@ -17,14 +17,14 @@ function AdminProduct() {
 
     const fetchUserAndProducts = async () => {
         try {
-            const meResponse = await axios.get('http://localhost:3000/api/me', {
+            const meResponse = await axios.get('/api/me', {
                 withCredentials: true,
             });
 
             const user = meResponse.data.user;
             setUserId(user._id);
 
-            const productsResponse = await axios.get('http://localhost:3000/api/products/');
+            const productsResponse = await axios.get('/api/products/');
             setProducts(productsResponse.data);
         } catch (error) {
             console.error('Error fetching user or products:', error);
@@ -35,7 +35,7 @@ function AdminProduct() {
         if (!window.confirm("Are you sure you want to delete this product?")) return;
 
         try {
-            await axios.delete(`http://localhost:3000/api/products/${productId}`, {
+            await axios.delete(`/api/products/${productId}`, {
                 withCredentials: true
             });
 

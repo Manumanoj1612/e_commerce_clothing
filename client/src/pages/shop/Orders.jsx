@@ -7,7 +7,7 @@ function Orders() {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/orders', {
+                const res = await axios.get('/api/orders', {
                     withCredentials: true,
                 });
                 setOrders(res.data);
@@ -37,7 +37,7 @@ function Orders() {
 
     const cancelOrder = async (orderId) => {
         try {
-            await axios.put(`http://localhost:3000/api/orders/${orderId}/cancel`, {}, {
+            await axios.put(`/api/orders/${orderId}/cancel`, {}, {
                 withCredentials: true
             });
             // Update the state locally

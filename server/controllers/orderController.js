@@ -48,10 +48,10 @@ const getUserOrders = async (req, res) => {
 
         const filter = role === 'admin' ? {} : { user: userId };
         const orders = await Order.find(filter)
-            .populate({ path: 'user', select: 'username' })
+            .populate({ path: 'user', select: 'username' })                                         
             .populate('products.product')
             .sort({ createdAt: -1 }); // newest first
-        res.status(200).json(orders);
+            res.status(200).json(orders);
     } catch (err) {
         console.error('Fetch orders error:', err);
         res.status(500).json({ message: 'Failed to fetch orders', error: err.message });

@@ -35,7 +35,7 @@ function Addproduct() {
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/me', { withCredentials: true });
+        const res = await axios.get('/api/me', { withCredentials: true });
         setCurrentUser(res.data.user);
       } catch (err) {
         console.error('Error fetching current user:', err.response?.data || err.message);
@@ -102,7 +102,7 @@ function Addproduct() {
       console.log('Sending Product:', productData);
 
       // Send product data to backend
-      const res = await axios.post('http://localhost:3000/api/products', productData, {
+      const res = await axios.post('/api/products', productData, {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true
       });

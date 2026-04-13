@@ -17,7 +17,7 @@ function Login() {
 
         try {
             const response = await axios.post(
-                'http://localhost:3000/api/login',
+                '/api/login',
                 { email, password },
                 { withCredentials: true } // ✅ Important for cookies
             );
@@ -26,7 +26,7 @@ function Login() {
 
             if (response.data.success) {
                 // After login → fetch user details
-                const meResponse = await axios.get('http://localhost:3000/api/me', { withCredentials: true });
+                const meResponse = await axios.get('/api/me', { withCredentials: true });
                 console.log("Fetched user after login:", meResponse.data);
                 setUser(meResponse.data.user);
                 navigate("/");

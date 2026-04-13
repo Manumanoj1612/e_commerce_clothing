@@ -10,7 +10,7 @@ function ProductDetails() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/products/${id}`);
+        const res = await axios.get(`/api/products/${id}`);
         setProduct(res.data);
         setMainImage(res.data.images?.[0] || '');
       } catch (err) {
@@ -24,7 +24,7 @@ function ProductDetails() {
   const handleAddToCart = async () => {
     try {
       await axios.post(
-        'http://localhost:3000/api/cart',
+        '/api/cart',
         {
           productId: product._id,
           quantity: 1,

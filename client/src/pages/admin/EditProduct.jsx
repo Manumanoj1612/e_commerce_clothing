@@ -36,7 +36,7 @@ function EditProduct({ productId, onClose, refreshProducts }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/products/${productId}`);
+        const res = await axios.get(`/api/products/${productId}`);
         const data = res.data;
         setName(data.name || '');
         setBrand(data.brand || '');
@@ -77,7 +77,7 @@ function EditProduct({ productId, onClose, refreshProducts }) {
     };
 
     try {
-      await axios.put(`http://localhost:3000/api/products/${productId}`, updatedProduct);
+      await axios.put(`/api/products/${productId}`, updatedProduct);
       alert('Product updated successfully!');
       if (refreshProducts) refreshProducts(); // refresh main product list
       if (onClose) onClose(); // close side panel

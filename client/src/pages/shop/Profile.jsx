@@ -12,7 +12,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const meResponse = await axios.get('http://localhost:3000/api/me', { withCredentials: true });
+        const meResponse = await axios.get('/api/me', { withCredentials: true });
         setUserData(meResponse.data.user); // save user { _id, username, role } or any fields returned
       } catch (err) {
         console.error('Failed to fetch user', err);
@@ -30,7 +30,7 @@ const Profile = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/api/logout', {}, { withCredentials: true });
+      await axios.post('/api/logout', {}, { withCredentials: true });
       setUser(null);
       navigate('/login');
     } catch (err) {
